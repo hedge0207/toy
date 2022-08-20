@@ -28,7 +28,10 @@ fa = [2, 4, 6, 8]
 
 s, b = [1, 1]
 
+
 while True:
+    pre_n = len(possible_candi)
+
     if s+b == 0:
         to_remove = []
         i = 0
@@ -44,7 +47,6 @@ while True:
         while i != len(possible_candi):
             st, ba = 0, 0
             for j in range(N):
-                print(i)
                 if fa[j] == possible_candi[i][j]:
                     st += 1
                 elif fa[j] in possible_candi[i]:
@@ -54,4 +56,9 @@ while True:
                 possible_candi.remove(possible_candi[i])
                 continue
 
-            i+=1
+            i += 1
+    
+    if pre_n == len(possible_candi):
+        break
+
+print(len(possible_candi))
