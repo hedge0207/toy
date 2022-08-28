@@ -180,12 +180,11 @@ def start():
             answer = opponent.choice_answer()
         except IndexError:
             print("Wait!, I think you give me wrong answer.")
-            print("Please check your answer!")
+            print("Please check your answers!")
             for i in opponent.player_answer:
-                for k, v in i.items():
-                    print(k)
-                    print(v)
-                    print("-"*100)
+                print("Numbers:", i["cpu_answer"])
+                print("Your answer:", i["player_answer"])
+                print("-"*100)
             break
 
         print("CPU's answer:", answer)
